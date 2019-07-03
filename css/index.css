@@ -11,4 +11,15 @@ body{
 } 
 
 /* Set a style for the rest of the elements besides the header elements on the index.html page */
-                                 
+        
+.postButtons{
+   position: absolute;
+   top:50%;
+   left:42%;
+}
+.body-btn{
+  margin: 10px;
+  width: 120px;
+  border: 1.5px solid chocolate;
+  height: 40px;
+}
