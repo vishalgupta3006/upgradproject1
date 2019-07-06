@@ -5,6 +5,11 @@
         <link href='..\css\header.css' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="..\font-awesome-4.7.0/css/font-awesome.min.css">
         <link href='..\css\font.css' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/8db8e01ef0.js"></script>
     <style>        
     </style>     
 </head>
@@ -12,6 +17,14 @@
         <div class="header">
              <!-- Insert code for Sign Up, Sign In button here. 
                Add code for "ScriBBler" heading and the sub-heading -->
+               <div class="header">
+
+                <button type="button" class="btn btn-primary header-btn" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+                <button type="button" class="btn btn-primary header-btn" data-toggle="modal" data-target="#signInModal">Sign In</button>
+                <a class="logo-title" href="../index.html">ScriBBler</a>
+                <p class="middle-text">Explore, Imagine, Create</p>
+    
+            </div>
         </div>
 
     <div class="blogContent">
@@ -22,20 +35,93 @@
 <div class="blogAuthor">
 
     <!-- Insert code for Edit/Save button and  -->
+    <button class="btn btn-light editBtn" id="editBtn" onclick="editfn()">Edit  <i class="far fa-edit"></i></button>
 
     <p>Jimi</p>
 </div>
 
 <div class="blogText">
     <p id="blogBody">
-            Jimi Hendrix was arguably the greatest instrumentalist in the history of rock music.[1] Hendrix expanded the range and vocabulary of the electric guitar into areas no musician had ever ventured before. His boundless drive, technical ability and creative application of such effects as distortion forever transformed the sound of rock and roll. While creating his unique musical voice and guitar style, Hendrix synthesized diverse genres, including blues, R&B, soul, British rock, American folk music, 1950s rock and roll, psychedelic and jazz. Hendrix favored overdriven amplifiers with high volume and gain.[119] He was instrumental in developing the previously undesirable technique of guitar amplifier feedback, and helped to popularize use of the wah-wah pedal in mainstream rock.[348] He rejected the standard barre chord fretting technique used by most guitarists in favor of fretting the low 6th string root notes with his thumb.[349] He applied this technique during the beginning bars of "Little Wing", which allowed him to sustain the root note of chords while also playing melody. This method has been described as piano style, with the thumb playing what a pianist's left hand would play and the other fingers playing melody as a right hand.[350] Having spent several years fronting a trio, he developed an ability to play rhythm chords and lead lines together, giving the audio impression that more than one guitarist was performing.[351][nb 41] He was the first artist to incorporate stereophonic phasing effects in rock music recordings.[354] Holly George-Warren of Rolling Stone commented: "Hendrix pioneered the use of the instrument as an electronic sound source. Players before him had experimented with feedback and distortion, but Hendrix turned those effects and others into a controlled, fluid vocabulary every bit as personal as the blues with which he began."[3][nb 42] Aledort wrote: "In rock guitar, there are but two eras — before Hendrix and after Hendrix."
+            Jimi Hendrix was arguably the greatest instrumentalist in the history of rock music.[1] Hendrix expanded the range and vocabulary of the electric guitar into areas no musician had ever ventured before. His boundless drive, technical ability and creative application of such effects as distortion forever transformed the sound of rock and roll. While creating his unique musical voice and guitar style, Hendrix synthesized diverse genres, including blues, R&B, soul, British rock, American folk music, 1950s rock and roll, psychedelic and jazz. Hendrix favored overdriven amplifiers with high volume and gain.[119] He was instrumental in developing the previously undesirable technique of guitar amplifier feedback, and helped to popularize use of the wah-wah pedal in mainstream rock.[348] He rejected the standard barre chord fretting technique used by most guitarists in favor of fretting the low 6th string root notes with his thumb.[349] He applied this technique during the beginning bars of "Little Wing", which allowed him to sustain the root note of chords while also playing melody. This method has been described as piano style, with the thumb playing what a pianist's left hand would play and the other fingers playing melody as a right hand.[350] Having spent several years fronting a trio, he developed an ability to play rhythm chords and lead lines together, giving the audio impression that more than one guitarist was performing.[351][nb 41] He was the first artist to incorporate stereophonic phasing effects in rock music recordings.[354] Holly George-Warren of Rolling Stone commented: "Hendrix pioneered the use of the instrument as an electronic sound source. Players before him had experimented with feedback and distortion, but Hendrix turned those effects and others into a controlled, fluid vocabulary every bit as personal as the blues with which he began."[3][nb 42] Aledort wrote: "In rock guitar, there are but two eras ï¿½ before Hendrix and after Hendrix."
     </p>
 </div>
 
     <!-- Insert code for Like button, Comment button, Comment box here-->
 
+    <div class="likeBlogButton">    
+        <button class="btn btn-light" id= "likeBlog" onclick="postLiked()"><i class='fa fa-thumbs-up'></i> Like</button> 
+        <div id="likeCount">Be the first one to like this!</div>
+    </div>
+    <textarea rows="5" id="userComments" placeholder="Leaves a comment ..."  value=""></textarea><br>
+    <button class="btn btn-light" id="addList" onclick="addComments(userComments)">Comment</button>
+    <h5>All Comments</h5>
+    <div id="addComments"></div>
+
     <script src="..\js\post.js" defer></script>
     <script src="..\js\header.js">             
     </script>
+    <div class="modal" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">Welcome Back!</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            <form>
+                <div class="form-group">
+                  <label class="modal-label" for="username">Username</label>
+                  <input type="text" class="form-control" id="username" placeholder="Enter Username" required>
+                </div>
+                <div class="form-group">
+                  <label class="modal-label" for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Enter Password" required>
+                </div>
+                <button type="submit" class="btn btn-success modal-btn">Sign in</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+             <p class="footer-text">Not a member? <a href="" data-toggle="modal" data-target="#signUpModal" data-dismiss="modal">Sign Up</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="modal" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">Get Started</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div  class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label class="modal-label" for="fullname">Full Name</label>
+                    <input type="text" class="form-control" id="fullname" placeholder="Enter Full Name" required>
+                </div>
+                <div class="form-group">
+                  <label class="modal-label" for="username">Username</label>
+                  <input type="text" class="form-control" id="username" placeholder="Enter Username" required>
+                </div>
+                <div class="form-group">
+                  <label class="modal-label" for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Enter Password" required>
+                </div>
+                <div class="form-group">
+                        <label class="modal-label" for="password1">Confirm Password</label>
+                        <input type="password" class="form-control" id="password1" placeholder="Confirm Password" required>
+                      </div>
+                <button type="submit" class="btn btn-success modal-btn">Sign Up</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     
 </body>
