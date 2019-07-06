@@ -1,12 +1,14 @@
 .post {
     position: relative;
     width: 90%;
-    height: 20%;
+    height: 183px;
     background: #fff;
     box-shadow:0 4px 10px 0 rgba(17, 4, 63, 0.2),0 4px 20px 0 rgba(79, 19, 97, 0.19);
     margin: 10px 10px 10px 20px;
     float:left;
     border-radius: 15px;
+    margin-left: 5%;
+    
 }
     
 .post-left {
@@ -25,27 +27,26 @@
         background-color: #E8E8E8;
         color: #000000;
         border-radius: 0 15px 15px 0;
-        padding: 0 20px;      
+        padding: 0 30px 30px;   
+        overflow: hidden;
+        text-overflow : ellipsis; 
+        height: 100%;
+          
 }
 .post-title{
+    display: flex;
     font-family: 'Itim', cursive;
     font-weight: bold;
     color: #2b312b;
     font-size: 25px;
     height: 25px;
+    margin-top: 12px;
     }
-.post-more {
-    float: right;
-    cursor: pointer;
-    font-size: 18px;
-    margin-right: 0 !important;
-    padding-right: 0 !important;
-    padding-bottom: 10px;
-    font-size: 30px;
-}
+
 .post-desc{
     height: 100px;
     margin-bottom: 0 !important;
+    overflow: hidden;
 }
 
 body {
@@ -54,11 +55,31 @@ body {
     position: relative;
     margin: 0 !important;
     color: #fff;
-    background-color: orange;
+    background-color: orange !important;
     background-size: 2000% 2000%;
 }
 .allPostsContainer {
     height: 100%;
     width: 100%;
 
+}
+.delbtn{
+    position: absolute;
+    top: 6%;
+    right: 4%;
+}
+.otherbtn{
+    position: absolute;
+    right: 4%;
+    bottom:5%;
+    color: #000;
+}
+.modalBody{
+    text-align: center;
+}
+.yesBtn{
+    width:90%;
+}
+.noBtn{
+    width: 90%;
 }
