@@ -23,7 +23,7 @@ the title "ScriBBler" & the sub-heading below "ScriBBLer" */
     margin: 0 0 0px 10px;
  }
  .modal-dialog{
-    width: 25% !important;
+    
 }
  .modal-header{
      text-align: right;
@@ -48,9 +48,10 @@ the title "ScriBBler" & the sub-heading below "ScriBBLer" */
      margin-top: 10px;
      width: 100%;
  }
- .footer-text{
-     margin-right: 100px;
- }
  .modal{
     font-family: 'Ubuntu Condensed' ;
  }
+.modal-footer{
+    justify-content: center !important;
+}
+  

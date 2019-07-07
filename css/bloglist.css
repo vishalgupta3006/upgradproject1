@@ -1,7 +1,7 @@
 .post {
     position: relative;
     width: 90%;
-    height: 183px;
+    height: 186px;
     background: #fff;
     box-shadow:0 4px 10px 0 rgba(17, 4, 63, 0.2),0 4px 20px 0 rgba(79, 19, 97, 0.19);
     margin: 10px 10px 10px 20px;
@@ -39,8 +39,9 @@
     font-weight: bold;
     color: #2b312b;
     font-size: 25px;
-    height: 25px;
-    margin-top: 12px;
+    height: 30px;
+    margin-top: 10px;
+    overflow: hidden;
     }
 
 .post-desc{
